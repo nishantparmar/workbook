@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class GraphTest {
+class GraphTest extends Graph{
 
     Graph graph;
     @BeforeEach
@@ -18,13 +18,38 @@ class GraphTest {
         graph.addNode("A");
         graph.addNode("B");
         graph.addNode("C");
-//        graph.addNode("D");
+
         graph.addEdge("A", "B");
         graph.addEdge("A", "C");
-//        graph.addEdge("A", "D");
-//        graph.addEdge("B", "C");
+
         graph.print();
-        graph.removeNode("C");
+
+        //graph.removeEdge("A", "C");
+        graph.removeNode("B");
+
         graph.print();
+    }
+
+    @Test
+    void traverseDepthFirst() {
+        Graph graph = new Graph();
+        graph.addNode("A");
+        graph.addNode("B");
+        graph.addNode("C");
+        graph.addEdge("A", "B");
+        graph.addEdge("A", "C");
+        graph.traverseDepthFirst("A");
+
+    }
+
+    @Test
+    void traverseBreadthFirst() {
+        Graph graph = new Graph();
+        graph.addNode("A");
+        graph.addNode("B");
+        graph.addNode("C");
+        graph.addEdge("A", "B");
+        graph.addEdge("A", "C");
+        graph.traverseBreadthFirst("A");
     }
 }

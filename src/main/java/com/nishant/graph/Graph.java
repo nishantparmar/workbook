@@ -1,9 +1,6 @@
 package com.nishant.graph;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Graph {
     private class Node {
@@ -16,6 +13,19 @@ public class Graph {
         @Override
         public String toString() {
             return label;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Node node = (Node) o;
+            return label.equals(node.label);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(label);
         }
     }
 
@@ -31,12 +41,14 @@ public class Graph {
     public void addEdge(String from, String to) {
         var fromNode = nodes.get(from);
         var toNode = nodes.get(to);
+        if (fromNode == null || toNode == null) return;
         adjacencyList.get(fromNode).add(toNode);
     }
 
     public void removeEdge(String from, String to) {
         var fromNode = nodes.get(from);
         var toNode = nodes.get(to);
+        if (fromNode == null || toNode == null) return;
         adjacencyList.get(fromNode).remove(toNode);
     }
 
@@ -45,11 +57,10 @@ public class Graph {
 
         var node = new Node(label);
         for (var n : adjacencyList.keySet())
-            adjacencyList.get(n).remove(n);//remove linkage
+            adjacencyList.get(n).remove(node);//remove linkage
 
-            adjacencyList.remove(node);
-            nodes.remove(node);
-
+        adjacencyList.remove(node);
+        nodes.remove(node);
     }
 
     public void print() {
@@ -60,5 +71,41 @@ public class Graph {
         }
     }
 
+    public void traverseDepthFirst(String root) {
+        if(nodes.get(root) == null) return;
+        traverseDepthFirst(nodes.get(root), new HashSet<Node>());
+    }
+
+    public void traverseDepthFirst(Node root, Set<Node> visited) {
+        System.out.println(root);
+        visited.add(root);
+        for (var node : adjacencyList.get(root)) {
+            if (!visited.contains(node)) {
+                traverseDepthFirst(node, visited);
+            }
+        }
+    }
+    public void traverseBreadthFirst(String root){
+        var node = nodes.get(root);
+        if( node == null) return;
+
+        Set<Node> visited = new HashSet<>();
+        Queue<Node> queue = new ArrayDeque();
+        queue.add(node);
+
+        while (!queue.isEmpty()){
+            Node current = queue.remove();
+            if(visited.contains(current))
+                continue;
+
+            visited.add(current);
+            System.out.println(current);
+
+            for(var neighbour: adjacencyList.get(current)){
+                if(!visited.contains(neighbour))
+                    queue.add(neighbour);
+            }
+        }
+    }
 
 }

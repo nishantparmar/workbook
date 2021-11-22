@@ -21,8 +21,8 @@ public class LRUCache {
 
         Node node = map.get(key);
 
-        deleteFromList(node);
-        setListHead(node);
+        //deleteFromList(node);
+        //setListHead(node);
 
         return node.getValue();
 
@@ -33,17 +33,17 @@ public class LRUCache {
             Node node = map.get(key);
             node.setValue(value);
 
-            deleteFromList(node);
-            setListHead(node);
+            //deleteFromList(node);
+            //setListHead(node);
 
         } else{
             if(map.size() > capacity){
                 map.remove(tail.getKey());
-                deleteFromList(tail);
+                //deleteFromList(tail);
             }
             Node node = new Node(key, value);
             map.put(key, node);
-            setListHead(node);
+            //setListHead(node);
         }
 
     }
