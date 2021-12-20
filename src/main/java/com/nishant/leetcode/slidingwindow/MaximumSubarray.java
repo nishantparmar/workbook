@@ -1,5 +1,7 @@
 package com.nishant.leetcode.slidingwindow;
 
+import java.sql.SQLOutput;
+
 //PENDING
 public class MaximumSubarray {
     public static void main(String[] args){
@@ -7,21 +9,33 @@ public class MaximumSubarray {
         int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
 
 
+
     }
 
-    public static int maxSubArray(int[] nums) {
-        int maxsize = 0;
-        int sum = 0;
+    public static int maxSubArraySize(int[] nums, int target) {
+        int maxSize = 0;
+        int windowSize = 0;
+        int cWindowStart = 0;
+        int windowEnd = target - 1;
+        int pWindowStart = 0;
 
-        int windowStart = 0;
-        int windowEnd = nums.length -1;
-
-        for(int i=windowStart ; i <= windowEnd; windowStart++){
-
+        for (int i = 0; i < target; i++) {
+            windowSize = windowSize + nums[i];
         }
 
-
-
-        return maxsize;
+        int pWindowSize = windowSize;
+        while (cWindowStart <= nums.length - target) {
+            if (cWindowStart > 0) {
+                int newSize = (pWindowSize - nums[pWindowStart]) + nums[windowEnd];
+                if (newSize > maxSize) {
+                    maxSize = newSize;
+                }
+                pWindowStart++;
+                pWindowSize = newSize;
+            }
+            cWindowStart++;
+            windowEnd++;
+        }
+        return maxSize;
     }
 }
