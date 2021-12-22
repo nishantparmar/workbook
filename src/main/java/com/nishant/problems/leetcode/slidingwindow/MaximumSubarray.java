@@ -1,6 +1,4 @@
-package com.nishant.leetcode.slidingwindow;
-
-import java.sql.SQLOutput;
+package com.nishant.problems.leetcode.slidingwindow;
 
 //PENDING
 public class MaximumSubarray {

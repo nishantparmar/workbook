@@ -1,6 +1,4 @@
-package com.nishant.leetcode;
-
-import java.util.Locale;
+package com.nishant.problems.leetcode;
 
 //COMPLETED
 public class DetectCapital {

@@ -1,4 +1,4 @@
-package com.nishant.leetcode;
+package com.nishant.problems.leetcode;
 
 /**
  * Given a characters array letters that is sorted in non-decreasing order and

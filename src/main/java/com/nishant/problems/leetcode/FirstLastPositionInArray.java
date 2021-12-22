@@ -1,4 +1,4 @@
-package com.nishant.leetcode;
+package com.nishant.problems.leetcode;
 
 //PENDING
 public class FirstLastPositionInArray {

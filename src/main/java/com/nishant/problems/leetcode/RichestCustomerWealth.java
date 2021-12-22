@@ -1,4 +1,4 @@
-package com.nishant.leetcode;
+package com.nishant.problems.leetcode;
 //https://leetcode.com/problems/richest-customer-wealth/
 //COMPLETED
 public class RichestCustomerWealth {

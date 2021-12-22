@@ -1,4 +1,4 @@
-package com.nishant.leetcode.slidingwindow;
+package com.nishant.problems.leetcode.slidingwindow;
 
 //https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/
 //PENDING
