@@ -47,5 +47,20 @@ public class Miscellaneous {
         return count(number/10, count);
     }
 
+    static String skipCharacter(String input, String element){
+
+
+        return input;
+    }
+
+//    private static String skip(String input, String element, int index){
+//        if(index == input.length() -1) return input;
+//        char[] c = input.toCharArray();
+//        if(c[index] == element.charAt(0)){
+////            c[index] = ;
+//        }
+//
+//    }
+
 
 }
