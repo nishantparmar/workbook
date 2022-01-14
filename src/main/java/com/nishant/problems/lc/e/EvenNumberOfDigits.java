@@ -1,4 +1,4 @@
-package com.nishant.problems.leetcode;
+package com.nishant.problems.lc.e;
 //https://leetcode.com/problems/find-numbers-with-even-number-of-digits/
 //COMPLETED
 public class EvenNumberOfDigits {

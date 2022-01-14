@@ -1,15 +1,16 @@
-package com.nishant.problems.leetcode;
+package com.nishant.problems.lc.e;
 
-//https://leetcode.com/problems/find-peak-element/
+//https://leetcode.com/problems/peak-index-in-a-mountain-array/
 
-public class PeakElement {
+//COMPLETED
+public class PeakIndexMountainArray {
 
     public static void main(String[] args) {
         int[] nums = {0,2,1,0};
-        System.out.println(findPeakElement(nums));
+        System.out.println(findPeak(nums));
     }
 
-    static int findPeakElement(int[] nums){
+    static int findPeak(int[] nums){
         int start = 0;
         int end = nums.length -1;
         while(start < end){
@@ -20,6 +21,7 @@ public class PeakElement {
                 start = mid+1;
             }
         }
-        return nums[start];
+        return start;
     }
+
 }

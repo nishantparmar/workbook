@@ -1,4 +1,4 @@
-package com.nishant.problems.leetcode;
+package com.nishant.problems.lc.e;
 
 import java.util.HashMap;
 import java.util.Map;

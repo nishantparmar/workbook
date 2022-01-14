@@ -1,4 +1,4 @@
-package com.nishant.problems.leetcode.slidingwindow;
+package com.nishant.problems.lc.m;
 
 import java.util.HashMap;
 import java.util.Map;

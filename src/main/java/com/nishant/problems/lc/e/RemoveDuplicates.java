@@ -1,4 +1,4 @@
-package com.nishant.problems.leetcode;
+package com.nishant.problems.lc.e;
 
 /**
  * Given an array of sorted numbers, remove all duplicates from it.

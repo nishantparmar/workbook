@@ -1,4 +1,4 @@
-package com.nishant.problems.leetcode;
+package com.nishant.problems.lc.m;
 
 import java.util.Arrays;
 //https://leetcode.com/problems/destroying-asteroids/

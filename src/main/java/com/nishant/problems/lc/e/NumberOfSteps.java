@@ -1,4 +1,4 @@
-package com.nishant.problems.leetcode;
+package com.nishant.problems.lc.e;
 
 //https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/
 //PENDING

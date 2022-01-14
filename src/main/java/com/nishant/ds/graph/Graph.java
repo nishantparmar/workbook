@@ -72,7 +72,7 @@ public class Graph {
     }
 
     public void traverseDepthFirst(String root) {
-        if(nodes.get(root) == null) return;
+        if (nodes.get(root) == null) return;
         traverseDepthFirst(nodes.get(root), new HashSet<Node>());
     }
 
@@ -85,24 +85,25 @@ public class Graph {
             }
         }
     }
-    public void traverseBreadthFirst(String root){
+
+    public void traverseBreadthFirst(String root) {
         var node = nodes.get(root);
-        if( node == null) return;
+        if (node == null) return;
 
         Set<Node> visited = new HashSet<>();
         Queue<Node> queue = new ArrayDeque();
         queue.add(node);
 
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             Node current = queue.remove();
-            if(visited.contains(current))
+            if (visited.contains(current))
                 continue;
 
             visited.add(current);
             System.out.println(current);
 
-            for(var neighbour: adjacencyList.get(current)){
-                if(!visited.contains(neighbour))
+            for (var neighbour : adjacencyList.get(current)) {
+                if (!visited.contains(neighbour))
                     queue.add(neighbour);
             }
         }

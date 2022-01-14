@@ -124,15 +124,24 @@ public class Tree {
     }
 
 
-    //TODO
     public void bfsTraversal() {
         if (root == null) {
             return;
         }
         int height = height();
         for (int i = 0; i <= height; i++) {
-            //   for(Node node : getNodesAtDistanceK(i))
-            //   printNode(node);
+            printCurrentLevel(root, i);
+        }
+    }
+
+    private void printCurrentLevel(Node root, int level) {
+        if (root == null)
+            return;
+        if (level == 1)
+            System.out.print(root.value + " ");
+        else if (level > 1) {
+            printCurrentLevel(root.leftChild, level - 1);
+            printCurrentLevel(root.rightChild, level - 1);
         }
     }
 

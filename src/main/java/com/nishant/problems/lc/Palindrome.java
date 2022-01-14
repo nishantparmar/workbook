@@ -1,4 +1,6 @@
-package com.nishant.problems.leetcode;
+package com.nishant.problems.lc;
+
+import com.nishant.problems.lc.m.ReverseInteger;
 
 //COMPLETED
 public class Palindrome {

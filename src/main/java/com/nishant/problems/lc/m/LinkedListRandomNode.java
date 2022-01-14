@@ -1,4 +1,4 @@
-package com.nishant.problems.leetcode;
+package com.nishant.problems.lc.m;
 
 //https://leetcode.com/problems/linked-list-random-node/
 //MEDIUM
