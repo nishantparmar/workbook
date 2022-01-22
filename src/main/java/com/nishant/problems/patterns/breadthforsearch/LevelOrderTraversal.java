@@ -85,7 +85,7 @@ public class LevelOrderTraversal {
         root1.right = new TreeNode(1);
         root1.right.left = new TreeNode(0);
         root1.right.right = new TreeNode(1);
-        System.out.println("Level order traversal: " + lot.traverse(root1));
+        System.out.println("Level order traversal: " + lot.traverse(root));
     }
 
 }
