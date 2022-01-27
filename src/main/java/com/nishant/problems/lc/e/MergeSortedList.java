@@ -7,6 +7,23 @@ import com.nishant.Utilities;
 //COMPLETED
 public class MergeSortedList {
 
+    //recursive method
+    public ListNode mergeTwoLists(ListNode firstList, ListNode secondList) {
+        ListNode mergedList = null;
+
+        if (firstList == null) return secondList;
+        if (secondList == null) return firstList;
+
+        if (firstList.val <= secondList.val) {
+            mergedList = firstList;
+            mergedList.next = mergeTwoLists(firstList.next, secondList);
+        } else {
+            mergedList = secondList;
+            mergedList.next = mergeTwoLists(firstList, secondList.next);
+        }
+        return mergedList;
+    }
+
     public static void main(String[] args) {
         ListNode fisrtList = new ListNode(1);
         fisrtList.next = new ListNode(2);
@@ -20,28 +37,6 @@ public class MergeSortedList {
 
         Utilities.printListNode(mergedList);
 
-    }
-
-    //recursive method
-    public ListNode mergeTwoLists(ListNode firstList, ListNode secondList) {
-        ListNode mergedList = null;
-
-        if (firstList == null) {
-            return secondList;
-        }
-
-        if (secondList == null) {
-            return firstList;
-        }
-
-        if (firstList.val <= secondList.val) {
-            mergedList = firstList;
-            mergedList.next = mergeTwoLists(firstList.next, secondList);
-        } else {
-            mergedList = secondList;
-            mergedList.next = mergeTwoLists(firstList, secondList.next);
-        }
-        return mergedList;
     }
 
 //    public static LL merge(LL first, LL second) {

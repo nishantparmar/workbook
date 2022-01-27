@@ -24,10 +24,23 @@ public class Utilities {
             System.out.print(current.val + "-->");
             current = current.next;
         }
-        if(current != null) {
+        if (current != null) {
             System.out.println(current.val);
-        }else {
+        } else {
             System.out.println("Empty List");
         }
+    }
+
+    public static void printBinaryTree(TreeNode root, int level) {
+        if (root == null)
+            return;
+        printBinaryTree(root.right, level + 1);
+        if (level != 0) {
+            for (int i = 0; i < level - 1; i++)
+                System.out.print("|\t");
+            System.out.println("|-------" + root.val);
+        } else
+            System.out.println(root.val);
+        printBinaryTree(root.left, level + 1);
     }
 }
