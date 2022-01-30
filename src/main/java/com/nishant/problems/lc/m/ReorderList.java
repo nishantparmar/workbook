@@ -3,11 +3,15 @@ package com.nishant.problems.lc.m;
 import com.nishant.ListNode;
 import com.nishant.Utilities;
 
+//https://leetcode.com/problems/reorder-list/
 public class ReorderList {
     public void reorderList(ListNode head) {
         int mid = findMiddle(head);
 
         ListNode current = head;
+        while (current.next != null){
+
+        }
 
 
     }
