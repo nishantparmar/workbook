@@ -1,25 +1,11 @@
 package com.nishant.problems.lc.m;
 
+import com.nishant.ListNode;
+
 //https://leetcode.com/problems/linked-list-random-node/
 //MEDIUM
 //COMPLETED
 public class LinkedListRandomNode {
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 
     public static void main(String[] args) {
         ListNode head = new ListNode(1);

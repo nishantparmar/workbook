@@ -1,5 +1,7 @@
 package com.nishant.problems.lc.m;
 
+import com.nishant.ListNode;
+
 //https://leetcode.com/problems/design-linked-list/
 //MEDIUM
 //In Progress
@@ -20,19 +22,7 @@ public class MyLinkedList {
         mll1.addAtHead(6);
     }
 
-    public static class ListNode {
-        public int value;
-        public ListNode next;
 
-        public ListNode() {
-        }
-
-        public ListNode(int value, ListNode next) {
-            this.value = value;
-            this.next = next;
-        }
-
-    }
 
     ListNode head;
 
@@ -44,14 +34,12 @@ public class MyLinkedList {
         if (head == null) {
             return -1;
         }
-        if (head.value > 1000) {
-            return -1;
-        }
+
         int i = 0;
         ListNode currentNode = head;
         while (i <= index) {
             if (i == index) {
-                return currentNode.value;
+                return currentNode.val;
             }
             currentNode = currentNode.next;
             if (currentNode == null) {
@@ -65,14 +53,14 @@ public class MyLinkedList {
 
     public void addAtHead(int val) {
         ListNode newHead = new ListNode();
-        newHead.value = val;
+        newHead.val = val;
         newHead.next = head;
         head = newHead;
     }
 
     public void addAtTail(int val) {
         ListNode newTail = new ListNode();
-        newTail.value = val;
+        newTail.val = val;
 
         if (head.next == null) {
             head.next = newTail;
@@ -91,7 +79,7 @@ public class MyLinkedList {
 
     public void addAtIndex(int index, int val) {
         ListNode aNode = new ListNode();
-        aNode.value = val;
+        aNode.val = val;
 
         if (index == 0) {
             aNode.next = head;
@@ -145,9 +133,9 @@ public class MyLinkedList {
 
     public void print(ListNode head) {
         ListNode current = head;
-        System.out.println(current.value + "->");
+        System.out.println(current.val + "->");
         while (current.next != null) {
-            System.out.print(current.value + "->");
+            System.out.print(current.val + "->");
             current = current.next;
         }
         System.out.println("--------");

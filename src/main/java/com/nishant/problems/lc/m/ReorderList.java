@@ -8,7 +8,7 @@ public class ReorderList {
         int mid = findMiddle(head);
 
         ListNode current = head;
-        
+
 
     }
 
@@ -16,6 +16,7 @@ public class ReorderList {
         if (head == null || head.next == null) {
             return head;
         }
+
 
         ListNode previous = head;
         ListNode current = head.next;
