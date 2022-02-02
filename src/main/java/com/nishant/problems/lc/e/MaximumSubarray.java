@@ -1,9 +1,7 @@
 package com.nishant.problems.lc.e;
 
-import com.nishant.Utilities;
-
-import java.util.Arrays;
-
+//https://leetcode.com/problems/maximum-subarray/
+//COMPLETED
 public class MaximumSubarray {
     public int maxSubArray(int[] nums) {
         int max_sum = Integer.MIN_VALUE;

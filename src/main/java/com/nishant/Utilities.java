@@ -43,4 +43,11 @@ public class Utilities {
             System.out.println(root.val);
         printBinaryTree(root.left, level + 1);
     }
+
+    public static void printTrie(TrieNode root){
+        TrieNode current = root;
+        for (int i = 0; i < current.children.length; i++) {
+            System.out.println(current.children[i] == null? "":current.children[i]  + " ");
+        }
+    }
 }

@@ -1,17 +1,11 @@
-package com.nishant.problems.lc;
+package com.nishant.problems.lc.e;
 
-//PENDING
-public class SquareRoot {
-
-    public static void main(String[] args) {
-
-//        System.out.println(sqrRoot(9));
-//        System.out.println(sqrRoot(4));
-//        System.out.println(sqrRoot(1));
-//        System.out.println(sqrRoot(0));
-//        System.out.println(sqrRoot(5));
-
-        System.out.println(sqrRoot(3));//expected 46339
+//https://leetcode.com/problems/valid-perfect-square
+//COMPLETED
+public class ValidPerfectSquare {
+    public boolean isPerfectSquare(int num) {
+        int sqrRoot = sqrRoot(num);
+        return sqrRoot*sqrRoot == num;
     }
 
     private static int sqrRoot(int num) {
@@ -32,5 +26,9 @@ public class SquareRoot {
         }
         return start;
     }
+    public static void main(String[] args) {
+        ValidPerfectSquare vps = new ValidPerfectSquare();
 
+        System.out.println(vps.isPerfectSquare(7));
+    }
 }
