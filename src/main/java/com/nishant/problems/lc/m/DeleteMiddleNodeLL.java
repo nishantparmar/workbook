@@ -2,7 +2,6 @@ package com.nishant.problems.lc.m;
 
 import com.nishant.ListNode;
 import com.nishant.Utilities;
-import com.nishant.problems.lc.e.PalindromeLinkedList;
 
 //https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/
 //COMPLETED - Consider time and space complexity
