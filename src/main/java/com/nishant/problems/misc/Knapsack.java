@@ -1,6 +1,9 @@
 package com.nishant.problems.misc;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 //Merry’s wants to carry some fruits in the knapsack to get maximum profit.
 // Here are the weights and profits of the fruits:

@@ -1,12 +1,28 @@
 package com.nishant.problems.misc;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Miscellaneous {
     public static void main(String[] args) {
+        Miscellaneous m = new Miscellaneous();
         int number = 1234;
-//        System.out.println(sumOfDigits(number));
-//        System.out.println(prodOfDigits(number));
-//        System.out.println(factorial(5));
-        System.out.println(countZero(0));
+        System.out.println(sumOfDigits(number));
+        System.out.println(prodOfDigits(number));
+        System.out.println(factorial(5));
+        System.out.println(count(123, 0));
+        System.out.println(m.getDigits(12345));
+    }
+
+    List<Integer> getDigits(int number) {
+        ArrayList<Integer> result = new ArrayList<>();
+
+        while (number > 0) {
+            int digit = number % 10;
+            result.add(digit);
+            number /= 10;
+        }
+        return result; // LSD at start of list
     }
 
     //Basic Recursive problems - Start
@@ -23,44 +39,35 @@ public class Miscellaneous {
     static int factorial(int number) {
         if (number == 0) {
             return 0;
-        } else if (number == 1){
+        } else if (number == 1) {
             return 1;
-        }else{
+        } else {
             return number * factorial(number - 1);
         }
     }
 
-    static int countZero(int number){
-        if(number ==0){
+    static int countZero(int number) {
+        if (number == 0) {
             return 1;
         }
         return count(number, 0);
     }
 
-    private static int count(int number, int count){
-        if(number/10 ==0){
+    private static int count(int number, int count) {
+        if (number / 10 == 0) {
             return count;
         }
-        if(number%10 == 0){
+        if (number % 10 == 0) {
             count++;
         }
-        return count(number/10, count);
+        return count(number / 10, count);
     }
 
-    static String skipCharacter(String input, String element){
+    static String skipCharacter(String input, String element) {
 
 
         return input;
     }
-
-//    private static String skip(String input, String element, int index){
-//        if(index == input.length() -1) return input;
-//        char[] c = input.toCharArray();
-//        if(c[index] == element.charAt(0)){
-////            c[index] = ;
-//        }
-//
-//    }
 
 
 }

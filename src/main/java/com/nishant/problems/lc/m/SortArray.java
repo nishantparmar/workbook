@@ -1,24 +1,19 @@
-package com.nishant.algo.sorting;
+package com.nishant.problems.lc.m;
 
 import java.util.Arrays;
-
-public class MergeSort {
-
-    public static void main(String[] args) {
-        int[] numbers = {1, 9, 4, 3, 2};
-        int[] sorted = mergeSort(numbers);
-        System.out.println(Arrays.toString(sorted));
-    }
-
-    static int[] mergeSort(int[] numbers) {
+//https://leetcode.com/problems/sort-an-array/
+//COMPLETED
+class SortArray {
+    //Using Merge Sort
+    public int[] sortArray(int[] numbers) {
         if (numbers.length == 1) return numbers;
         int mid = numbers.length / 2;
-        int[] left = mergeSort(Arrays.copyOfRange(numbers, 0, mid));
-        int[] right = mergeSort(Arrays.copyOfRange(numbers, mid, numbers.length));
+        int[] left = sortArray(Arrays.copyOfRange(numbers, 0, mid));
+        int[] right = sortArray(Arrays.copyOfRange(numbers, mid, numbers.length));
         return merge(left, right);
     }
-
-    private static int[] merge(int[] left, int[] right) {
+    
+    int[] merge(int[] left, int[] right) {
         int[] merged = new int[left.length + right.length];
         int i = 0;
         int j = 0;
@@ -46,5 +41,11 @@ public class MergeSort {
             k++;
         }
         return merged;
+    }
+
+    public static void main(String[] args) {
+        SortArray sa= new SortArray();
+        int[] numbers = {2,5,1,3,9,4,7,8};
+        System.out.println(Arrays.toString(sa.sortArray(numbers)));
     }
 }

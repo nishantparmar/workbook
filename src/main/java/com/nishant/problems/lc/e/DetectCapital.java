@@ -1,5 +1,6 @@
-package com.nishant.problems.lc;
+package com.nishant.problems.lc.e;
 
+//https://leetcode.com/problems/detect-capital/
 //COMPLETED
 public class DetectCapital {
 

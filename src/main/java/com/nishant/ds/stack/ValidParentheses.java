@@ -1,8 +1,5 @@
 package com.nishant.ds.stack;
 
-import java.net.StandardSocketOptions;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Stack;
 
 public class ValidParentheses {
