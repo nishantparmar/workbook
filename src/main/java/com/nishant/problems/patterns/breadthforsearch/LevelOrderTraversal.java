@@ -1,25 +1,16 @@
 package com.nishant.problems.patterns.breadthforsearch;
 
+import com.nishant.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
-//https://leetcode.com/problems/binary-tree-level-order-traversal/
-//MEDIUM
 
+//https://leetcode.com/problems/binary-tree-level-order-traversal/
 public class LevelOrderTraversal {
     static TreeNode root;
 
     public LevelOrderTraversal(TreeNode root) {
         this.root = root;
-    }
-
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
     }
 
     public List<List<Integer>> traverse(TreeNode root) {

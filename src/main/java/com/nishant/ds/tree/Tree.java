@@ -201,6 +201,7 @@ public class Tree {
     }
 
     public boolean validateBST(Node root) {
+
         return validate(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 
