@@ -15,27 +15,27 @@ public class SerializeDeserializeBinaryTree {
 
     private void traverse(TreeNode root, StringBuilder serializeString) {
         if (root == null) return;
-        serializeString.append(" ").append(root.val);
+        serializeString.append(root.val).append(" ");
         traverse(root.left, serializeString);
         traverse(root.right, serializeString);
     }
 
     // Decodes your encoded data to tree.
     public TreeNode deserialize(String data) {
-        if(data == null) return null;
-        if(data.length() == 0) return null;
+        if (data == null) return null;
+        if (data.length() == 0) return null;
 
         String[] strArr = data.split(" ");
-        TreeNode root = new TreeNode(Integer.parseInt(strArr[1]));
+        TreeNode root = new TreeNode(Integer.parseInt(strArr[0]));
 
-            for (int i = 2; i < strArr.length; i++) {
-                int val = Integer.parseInt(strArr[i]);
-                if (val > root.val) {
-                    root.right = new TreeNode(val);
-                } else {
-                    root.left = new TreeNode(val);
-                }
+        for (int i = 1; i < strArr.length; i++) {
+            int val = Integer.parseInt(strArr[i]);
+            if (val > root.val) {
+                root.right = new TreeNode(val);
+            } else {
+                root.left = new TreeNode(val);
             }
+        }
         return root;
     }
 
