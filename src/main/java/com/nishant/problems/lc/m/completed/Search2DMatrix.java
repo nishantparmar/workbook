@@ -1,12 +1,10 @@
-package com.nishant.problems.lc.m;
+package com.nishant.problems.lc.m.completed;
 
-import com.nishant.problems.lc.m.completed.Search2DMatrix;
-
-//https://leetcode.com/problems/search-a-2d-matrix-ii/
+//https://leetcode.com/problems/search-a-2d-matrix/
 //COMPLETED
-public class Search2DMatrixII {
+public class Search2DMatrix {
     public static void main(String[] args) {
-        int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int[][] matrix = {{3}};
         Search2DMatrix s = new Search2DMatrix();
         System.out.println(s.searchMatrix(matrix, 3));
     }

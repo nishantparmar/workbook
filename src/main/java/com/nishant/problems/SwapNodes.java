@@ -5,13 +5,48 @@ import com.nishant.Utilities;
 
 public class SwapNodes {
 
+    //1 --> 2 --> 3 --> 4 --> 5
+    //1 --> 4 --> 3 --> 2 --> 5
     public ListNode swapNode(ListNode head, int first, int second) {
 
-        ListNode current = head;
-        ListNode previous = null;
+        ListNode firstNode = head;
+        ListNode secondNode = head;
 
-        while (current != null){
-            
+        ListNode firstNodePrev = null;
+        ListNode secondNodePrev = null;
+
+        // Search for firstNode
+        while (firstNode != null && firstNode.val != first) {
+            firstNodePrev = firstNode;
+            firstNode = firstNode.next;
+        }
+
+        // Search for secondNode
+        while (secondNode != null && secondNode.val != second) {
+            secondNodePrev = secondNode;
+            secondNode = secondNode.next;
+        }
+
+        if (firstNode != null && secondNode != null) {
+
+            // If previous node to firstNode is not null then,
+            // it will point to secondNode
+            if (firstNodePrev != null)
+                firstNodePrev.next = secondNode;
+            else
+                head = secondNode;
+
+            // If previous node to secondNode is not null then,
+            // it will point to node1
+            if (secondNodePrev != null)
+                secondNodePrev.next = firstNode;
+            else
+                head = firstNode;
+
+            // Swaps the next nodes of firstNode and secondNode
+            ListNode temp = firstNode.next;
+            firstNode.next = secondNode.next;
+            secondNode.next = temp;
         }
 
         return head;

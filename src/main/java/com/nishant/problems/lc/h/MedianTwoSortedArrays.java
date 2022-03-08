@@ -42,7 +42,7 @@ public class MedianTwoSortedArrays {
 
         // Lets try to work on the smallest array as first
         if (nums1.length > nums2.length)
-            return findMedianSortedArrays(nums2, nums1);
+            return medianOfSortedLists(nums2, nums1);
 
         // Partition of the first array
         // lets partition the first array  using Binary  to middle

@@ -1,10 +1,7 @@
 package com.nishant.problems.lc.m;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
-import static com.nishant.ds.stack.ValidParentheses.isValid;
 
 public class CompareVersionNumbers {
     public int compareVersion(String version1, String version2) {
