@@ -50,4 +50,16 @@ public class Utilities {
             System.out.println(current.children[i] == null? "":current.children[i]  + " ");
         }
     }
+
+    public static void printMatrix(int[][] matrix) {
+        for (int row = 0; row < matrix.length; row++)//Cycles through rows
+        {
+            for (int col = 0; col < matrix[row].length; col++)//Cycles through columns
+            {
+                System.out.printf("%5d", matrix[row][col]); //change the %5d to however much space you want
+            }
+            System.out.println(); //Makes a new row
+        }
+        System.out.println("-----------------------------------");
+    }
 }

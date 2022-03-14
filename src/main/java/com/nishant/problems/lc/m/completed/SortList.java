@@ -1,4 +1,4 @@
-package com.nishant.problems.lc.m;
+package com.nishant.problems.lc.m.completed;
 
 import com.nishant.ListNode;
 import com.nishant.Utilities;
