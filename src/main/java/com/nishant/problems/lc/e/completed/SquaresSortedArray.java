@@ -1,12 +1,33 @@
-package com.nishant.problems.lc.e;
+package com.nishant.problems.lc.e.completed;
 
 import com.nishant.Utilities;
 
 import java.util.Arrays;
 //https://leetcode.com/problems/squares-of-a-sorted-array
-//COMPLETED
 public class SquaresSortedArray {
-    public int[] sortedSquares(int[] nums) {
+
+    //Approach #1 - Two Pointers
+    public int[] sortedSquares1(int[] nums) {
+        int n = nums.length;
+        int[] squares = new int[n];
+        int highestSquareIdx = n - 1;
+        int left = 0, right = nums.length - 1;
+        while (left <= right) {
+            int leftSquare = nums[left] * nums[left];
+            int rightSquare = nums[right] * nums[right];
+            if (leftSquare > rightSquare) {
+                squares[highestSquareIdx--] = leftSquare;
+                left++;
+            } else {
+                squares[highestSquareIdx--] = rightSquare;
+                right--;
+            }
+        }
+        return squares;
+    }
+
+    //Approach #2 A - Sorting (Default sort)
+    public int[] sortedSquares2A(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
             nums[i] = nums[i]*nums[i];
         }
@@ -14,13 +35,8 @@ public class SquaresSortedArray {
         return nums;
     }
 
-    public static void main(String[] args) {
-        int[] nums = {-10000, 0,0, 10000};
-        SquaresSortedArray ssa = new SquaresSortedArray();
-        Utilities.printArray(ssa.sortedSquares1(nums));
-    }
-
-    public int[] sortedSquares1(int[] nums) {
+    //Approach #2 B - Sorting (Merge sort)
+    public int[] sortedSquares2B(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
             if(nums[i] < 0)
             nums[i] = (-1)* nums[i];
@@ -65,5 +81,15 @@ public class SquaresSortedArray {
             k++;
         }
         return merged;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {-10000, 0,0, 10000};
+        SquaresSortedArray ssa = new SquaresSortedArray();
+        Utilities.printArray(ssa.sortedSquares1(nums));
+        System.out.println();
+        Utilities.printArray(ssa.sortedSquares2A(nums));
+        System.out.println();
+        Utilities.printArray(ssa.sortedSquares2B(nums));
     }
 }

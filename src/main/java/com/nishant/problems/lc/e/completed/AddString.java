@@ -1,4 +1,4 @@
-package com.nishant.problems.lc.e;
+package com.nishant.problems.lc.e.completed;
 
 //https://leetcode.com/problems/add-strings/
 public class AddString {

@@ -1,15 +1,28 @@
 package com.nishant.problems.lc.e.completed;
 
-//https://leetcode.com/problems/fibonacci-number/
-//COMPLETED - Check other efficient way
+import java.util.HashMap;
+import java.util.Map;
 
-//        Runtime: 22 ms, faster than 5.09% of Java online submissions for Fibonacci Number.
-//        Memory Usage: 40.7 MB, less than 6.79% of Java online submissions for Fibonacci Number.
+//https://leetcode.com/problems/fibonacci-number/
 public class FibonacciNumber {
     public int fib(int n) {
+        return fibonacci(n, new HashMap<Integer, Integer>());
+    }
+
+    public int fibonacci(int n, Map<Integer, Integer> memo) {
+        if (memo.containsKey(n)) return memo.get(n);
         if (n == 0) return 0;
         if (n == 1) return 1;
-        return fib(n - 1) + fib(n - 2);
+        int m = fibonacci(n - 1, memo) + fibonacci(n - 2, memo);
+        memo.put(n, m);
+        return m;
+    }
+
+    // using non memoization
+    public int fib1(int n) {
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+        return fib1(n - 1) + fib1(n - 2);
     }
 
     public static void main(String[] args) {

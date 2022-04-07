@@ -1,7 +1,5 @@
-package com.nishant.problems.lc.e;
+package com.nishant.problems.lc.e.completed;
 //https://leetcode.com/problems/reverse-string/
-//EASY
-//COMPLETE
 public class ReverseString {
     public static void main(String[] args) {
         char[] s = "hello".toCharArray();

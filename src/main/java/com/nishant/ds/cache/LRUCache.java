@@ -7,8 +7,8 @@ import java.util.Map;
 public class LRUCache {
 
     class Node {
-        private String key;
-        private String value;
+        int key;
+        int value;
 
         private Node next;
         private Node prev;
@@ -16,13 +16,13 @@ public class LRUCache {
         public Node() {
         }
 
-        public Node(String key, String value) {
+        public Node(int key, int value) {
             this.key = key;
             this.value = value;
         }
     }
 
-    private Map<String, Node> map;
+    private Map<Integer, Node> map;
     private int capacity;
 
     private Node head = null;
@@ -41,18 +41,18 @@ public class LRUCache {
         count = 0;
     }
 
-    public String get(String key) {
+    public int get(int key) {
         if (map.get(key) != null) {
             Node node = map.get(key);
-            String result = node.value;
+            int result = node.value;
             deleteNode(node);
             addToHead(node);
             return result;
         }
-        return "";
+        return -1;
     }
 
-    public void put(String key, String value) {
+    public void put(int key, int value) {
         if (map.get(key) != null) {
             Node node = map.get(key);
             node.value = value;
@@ -72,10 +72,16 @@ public class LRUCache {
         }
     }
 
-    private void deleteNode(Node node) {
+    public void deleteNode(Node node) {
+        node.prev.next = node.next;
+        node.next.prev = node.prev;
     }
 
-    private void addToHead(Node node) {
+    public void addToHead(Node node) {
+        node.next = head.next;
+        node.next.prev = node;
+        node.prev = head;
+        head.next = node;
     }
 
 
