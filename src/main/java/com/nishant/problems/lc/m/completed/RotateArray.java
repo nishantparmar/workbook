@@ -1,8 +1,7 @@
-package com.nishant.problems.lc.m;
+package com.nishant.problems.lc.m.completed;
 
 import com.nishant.Utilities;
 //https://leetcode.com/problems/rotate-array/
-//COMPLETED
 public class RotateArray {
     public void rotate(int[] nums, int k) {
         k = k % nums.length;

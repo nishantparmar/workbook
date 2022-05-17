@@ -76,12 +76,12 @@ public class Graph {
         traverseDepthFirst(nodes.get(root), new HashSet<Node>());
     }
 
-    public void traverseDepthFirst(Node root, Set<Node> visited) {
-        System.out.println(root);
-        visited.add(root);
-        for (var node : adjacencyList.get(root)) {
-            if (!visited.contains(node)) {
-                traverseDepthFirst(node, visited);
+    public void traverseDepthFirst(Node node, Set<Node> visited) {
+        System.out.println(node);
+        visited.add(node);
+        for (var n : adjacencyList.get(node)) {
+            if (!visited.contains(n)) {
+                traverseDepthFirst(n, visited);
             }
         }
     }
